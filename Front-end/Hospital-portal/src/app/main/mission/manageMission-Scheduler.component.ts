@@ -12,13 +12,13 @@ import { CookieService } from 'ngx-cookie-service';
 export class ManageMissionSchedulerComponent {
     checkedMissons: Mission[] = [];
     roleCookie: number;
-    userId: number;
+    userName: string;
     constructor(private router: Router,
         private missionService: MissionService, private cookieService: CookieService
     ) { }
     ngOnInit() {
         this.roleCookie = +this.cookieService.get('Auth-RoleId');
-        this.userId = +this.cookieService.get('Auth-UserId');
+        this.userName = this.cookieService.get('Auth-Username');
         if (this.roleCookie === 2 || this.roleCookie === 3 || this.roleCookie === 5) {
             // this.loadingService.start();
           this.reload();
@@ -38,6 +38,9 @@ export class ManageMissionSchedulerComponent {
             alert(err);
         });
 
+}
+detail(mission: Mission) {
+    this.router.navigate(['/main/mission-detail', mission.missionId]);
 }
 }
 

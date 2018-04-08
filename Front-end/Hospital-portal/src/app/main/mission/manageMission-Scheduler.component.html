@@ -4,7 +4,7 @@
         <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
         <!-- <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a> -->
       </div>
-      <h2 class="panel-title">Mission list</h2>
+      <h2 class="panel-title">Mission upload by {{userName}}</h2>
     </header>
     <div class="panel-body">
       <div class="row">
@@ -52,10 +52,11 @@
             </td>
 
             <td class="text-center">
-                <button [ngClass]="{'bg-warning':mission.status == 1,'bg-success':mission.status == 2,'bg-danger':mission.status == 3}">
+                <div  class="btn"   style="width: 90%"
+                [ngClass]="{'bg-warning':mission.status == 1,'bg-success':mission.status == 2,'bg-danger':mission.status == 3}">
                         {{mission.status == 1?'Waiting':''}} {{mission.status == 2?'Accept':''}} {{mission.status == 3?'Deny':''}}
 
-                </button>
+                </div>
               
             </td>
             <!-- <td class="text-center">{{user.CreatedDate | date:'dd/MM/yyyy'}}</td> -->

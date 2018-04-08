@@ -14,7 +14,7 @@
             <label  [ngClass]="{'bg-danger':department==0}" class=" control-label">Department
             </label >
             <div >
-                <select class="form-control = " [(ngModel)]=department aria-placeholder="Department">
+                <select class="form-control = " [(ngModel)]=department aria-placeholder="Department" (change)="con()">
                     <option *ngFor="let dept of departments" [ngValue]="dept.departmentId">{{dept.departmentName}}</option>
                 </select>
             </div>         

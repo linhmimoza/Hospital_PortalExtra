@@ -62,7 +62,15 @@ export class MissionService {
             });
         });
     }
-
+    activateMission(mission: Mission) {
+        return new Promise((resolve, reject) => {
+            this.apiService.post('activateMission', mission).then(res => {
+                resolve();
+            }).catch(err => {
+                reject(err);
+            });
+        });
+    }
     createMission(mission: Mission){
         return new Promise((resolve, reject) => {
             this.apiService.post('createMission', mission).then(res => {

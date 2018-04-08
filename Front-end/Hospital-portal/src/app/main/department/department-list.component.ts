@@ -41,7 +41,7 @@ export class DepartmentListComponent {
     }
 
     loadDepartment() {
-        this.departmentService.getList().then((res: Department[]) => {
+        this.departmentService.getAll().then((res: Department[]) => {
             this.departments = res;
         }).catch(err => {
             alert(err);

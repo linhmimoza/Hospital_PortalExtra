@@ -72,6 +72,7 @@ reload() {
         }
         this.missionService.updateMission(mission).then(() => {
             this.notificationService.success('Success');
+            this.missionService.activateMission(mission);
             this.reload();
         });
     }
@@ -88,6 +89,7 @@ reload() {
         mission.status = 2;
         this.missionService.updateMission(mission).then(() => {
             this.notificationService.success('Success');
+            this.missionService.activateMission(mission);
             this.reload();
         });
     }

@@ -220,8 +220,7 @@ public class MissionDAO implements Serializable {
                 String sql = "Select MissionId, StartDate, EndDate, Place, Content, Note, Status, Createby, CreateDate, "
                         + "Updateby, UpdateDate from Mission where Status=1";
                 stm = con.prepareStatement(sql);
-                rs = stm.executeQuery();
-            
+                rs = stm.executeQuery();           
                 while (rs.next()) {
                     Integer id = rs.getInt("MissionId");
                     String startDate = rs.getString("StartDate");

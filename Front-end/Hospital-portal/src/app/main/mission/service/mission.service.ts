@@ -65,7 +65,7 @@ export class MissionService {
     updateMission(mission: Mission) {
         return new Promise((resolve, reject) => {
             this.apiService.post('updateMission', mission).then(res => {
-                resolve();
+                resolve(res.text());
             }).catch(err => {
                 reject(err);
             });
@@ -74,16 +74,16 @@ export class MissionService {
     activateMission(mission: Mission) {
         return new Promise((resolve, reject) => {
             this.apiService.post('activateMission', mission).then(res => {
-                resolve();
+                resolve(res.text());
             }).catch(err => {
                 reject(err);
             });
         });
     }
-    createMission(mission: Mission){
+    createMission(mission: Mission) {
         return new Promise((resolve, reject) => {
             this.apiService.post('createMission', mission).then(res => {
-                resolve();
+                resolve(res.text());
             }).catch(err => {
                 reject(err);
             });

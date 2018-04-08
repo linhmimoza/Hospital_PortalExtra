@@ -392,7 +392,6 @@ public boolean isEmailExited(String email, int id){
         try {
           
             con = DBUtils.DBUtils.makeConnection();
-
             if (con != null) {
                 String sql = "Select UserId, UserName, Avatar, Email, FullName, Sex, DayOfBirth,u.RoleId, r.RoleName\n" +
 ",u.DepartmentId,d.DepartmentName, Phone, Position, Address, Certificate, u.Status from [User] u,\n" +

@@ -31,6 +31,11 @@ export class NotificationDetailComponent {
     }
 
     ngOnInit() {
+        $.getScript("assets/porto/javascripts/theme.admin.extension.js", function () {
+            $.getScript("assets/porto/javascripts/theme.init.js", function () {
+
+            });
+        });
         this.roleCookie = +this.cookieService.get("Auth-RoleId");
         if (this.roleCookie == 2 || this.roleCookie == 3 || this.roleCookie == 5) {
             this.form = new FormGroup({

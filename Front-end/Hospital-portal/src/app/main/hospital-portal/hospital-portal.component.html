@@ -39,24 +39,22 @@
         </div>
 
         <div class="row">
-            <div class="pricing-table" *ngFor="let notification of notifications | filter:term | paginate: { itemsPerPage: 10, currentPage: p }">
+            <div class="pricing-table" *ngFor="let notification of notifications | filter:term | paginate: { itemsPerPage: 2, currentPage: p }">
                 <div class="col-lg-6 col-sm-12">
                     <div class="plan">
                         <h3>{{notification.notificationName}}
-                            <span>$59</span>
                         </h3>
-                        <a class="btn btn-lg btn-primary" href="#">Sign up</a>
+                        <a class="btn btn-lg btn-primary" href="#">View content</a>
                         <ul>
                             <li>
-                                <b>10GB</b> {{notification.updateDate}}</li>
-                            <li>
-                                <b>100GB</b> Monthly Bandwidth</li>
-                            <li>
-                                <b>20</b> Email Accounts</li>
-                            <li>
-                                <b>Unlimited</b> subdomains</li>
+                                <b>Update date: </b> {{notification.updateDate | date:'dd/MM/yyyy'}}</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-8" style="padding-top: 20px;">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
                 </div>
             </div>
         </div>

@@ -59,10 +59,11 @@ export class MeetingDetailComponent {
             // this.loadingService.start();
             this.roomService.getList().then((res: Room[]) => {
                 this.rooms = res;
-                if (this.id == 0) 
+                if (this.id == 0) { 
                 this.form.patchValue({
                     roomId: this.rooms[0].roomId
                 });
+                }
             }).catch(err => {
                 alert(err);
             });
@@ -87,7 +88,7 @@ export class MeetingDetailComponent {
                         console.log(err);
                     });
                 } else {
-                    this.title = "You are creating new meeting";
+                    this.title = 'You are creating new meeting';
                     this.form.patchValue({
                         updateBy: this.cookieService.get("Auth-UserId"),
                         createBy: this.cookieService.get("Auth-UserId")
@@ -145,11 +146,12 @@ export class MeetingDetailComponent {
             this.id = +params['id']; // (+) converts string 'id' to a number
             // meeting.createBy = +this.cookieService.get("Auth-UserId");
             // meeting.updateBy = +this.cookieService.get("Auth-UserId");
-            console.log(this.meeting);
+
             if (this.id > 0) {
+                meeting.status = 1;
                 this.meetingService.updateMeeting(meeting).then((res: string) => {
                     this.responseText = res;
-                    if (this.responseText === "Success") {
+                    if (this.responseText === 'Success') {
                         this.notificationService.success(this.responseText).then(() => {
                             this.router.navigate(['/main/manage-meeting']);
                         });

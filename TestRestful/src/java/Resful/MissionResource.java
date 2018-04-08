@@ -94,6 +94,14 @@ public class MissionResource {
             List<Mission> listMission = dao.getMissionByUser(missionId);         
             return listMission;
     }
+    @Path("/geAllMissionByUser/{userId}")
+    @GET
+    @Produces()
+    public List<Mission> geAllMissionByUser(@PathParam("userId") int missionId) throws SQLException, ClassNotFoundException {
+    MissionDAO dao = new MissionDAO();
+            List<Mission> listMission = dao.getAllMissionByUser(missionId);         
+            return listMission;
+    }
      @Path("/activateMission")
    @POST
    @Produces()

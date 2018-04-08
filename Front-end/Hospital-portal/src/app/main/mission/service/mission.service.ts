@@ -43,6 +43,15 @@ export class MissionService {
             });
         });
     }
+    getAllByUser(userId) {
+        return new Promise((resolve, reject) => {
+            this.apiService.get('geAllMissionByUser/' + userId).then(res => {
+                resolve(res.json());
+            }).catch(err => {
+                reject(err);
+            });
+        });
+    }
     getMission(id) {
         return new Promise((resolve, reject) => {
             this.apiService.get(`getMissionById/${id}`).then(res => {

@@ -137,6 +137,7 @@ export class MissionDetailComponent {
         this.routerSubcription = this.route.params.subscribe(params => {
             this.id = +params['id']; // (+) converts string 'id' to a number
             if (this.id > 0) {
+                this.mission.status = 1;
                 this.missionService.updateMission(this.mission).then(() => {
                     alert('Save success');
                     this.router.navigate(['/main/manage-mission']);

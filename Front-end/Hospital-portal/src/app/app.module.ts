@@ -52,6 +52,8 @@ import { ManageMeetingComponent } from './main/meetting/manage-meeting.component
 import { MeetingDetailComponent } from './main/meetting/meeting-detail.component';
 import { MeetingService } from './main/meetting/service/meeting.service';
 import { UploadShiftScheduleComponent } from './main/shiftScheduler/upload-shiftSchedule.component';
+import { ManageMeetingSchedulerComponent } from './main/meetting/manageMeeting-Scheduler.component';
+import { ManageMissionSchedulerComponent } from './main/mission/manageMission-Scheduler.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -80,7 +82,9 @@ const routes: Routes = [
       { path: 'notification-detail/:id', component: NotificationDetailComponent },
       { path: 'manage-shiftSchedule', component: ManageShiftSchedulerComponent },
       { path: 'check-shiftSchedule', component: CheckShiftScheduleComponent },
-      { path: 'upload-shiftSchedule', component: UploadShiftScheduleComponent }
+      { path: 'upload-shiftSchedule', component: UploadShiftScheduleComponent },
+      { path: 'manageMeeting-Scheduler', component: ManageMeetingSchedulerComponent },
+      { path: 'manageMission-Scheduler', component: ManageMissionSchedulerComponent }
     ]
   },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
@@ -117,7 +121,9 @@ const routes: Routes = [
 
     PageNotFoundComponent,
     UploadShiftScheduleComponent,
-    CheckShiftScheduleComponent
+    CheckShiftScheduleComponent,
+    ManageMeetingSchedulerComponent,
+    ManageMissionSchedulerComponent
   ],
   imports: [
     BrowserModule,

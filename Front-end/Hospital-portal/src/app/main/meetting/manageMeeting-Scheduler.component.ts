@@ -20,7 +20,7 @@ export class ManageMeetingSchedulerComponent {
         ngOnInit() {
             this.roleCookie = +this.cookieService.get('Auth-RoleId');
             this.userName = this.cookieService.get('Auth-Username');
-            if (this.roleCookie === 2 || this.roleCookie === 3 || this.roleCookie === 5) {
+            if (this.roleCookie === 3) {
                 this.loadWaiting();
             } else if (isNaN(this.roleCookie)) {
                 alert('You don\'t have permission to view this page!');

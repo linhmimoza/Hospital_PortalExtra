@@ -44,13 +44,18 @@ export class MissionDetailComponent {
         private notificationService: NotificationService) {
 
     }
+
     back() {
-        this.router.navigate(['/main/manage-mission']);
+        if (this.roleCookie === 2) {
+            this.router.navigate(['/main/manage-mission']);
+        } else {
+            this.router.navigate(['/main/manageMission-Scheduler']);
+        }
     }
 
     ngOnInit() {
         this.roleCookie = +this.cookieService.get("Auth-RoleId");
-        if (this.roleCookie == 2 || this.roleCookie == 3 || this.roleCookie == 5) {
+        if (this.roleCookie == 2 || this.roleCookie == 3) {
             this.form = new FormGroup({
                 missionId: new FormControl(''),
                 startDate: new FormControl('', [
@@ -140,7 +145,7 @@ export class MissionDetailComponent {
         this.routerSubcription = this.route.params.subscribe(params => {
             this.id = +params['id']; // (+) converts string 'id' to a number
             if (this.id > 0) {
-                this.mission.status = 1;          
+                this.mission.status = 1;
                 this.missionService.updateMission(this.mission).then((res: string) => {
                     this.responseText = res;
                     if (this.responseText === "Success") {

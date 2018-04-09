@@ -45,10 +45,10 @@ export class CreateShiftSchedulerComponent {
 
     ngOnInit() {
         this.roleCookie = +this.cookieService.get("Auth-RoleId");
-        if (this.roleCookie == 2 || this.roleCookie == 3 || this.roleCookie == 5) {
+        if (this.roleCookie == 2 || this.roleCookie == 3) {
             this.loadDepartment();
             this.createMember();
-            
+
         } else if (isNaN(this.roleCookie)) {
             alert("You don't have permission to view this page!");
             this.router.navigate(['/login']);
@@ -69,7 +69,7 @@ export class CreateShiftSchedulerComponent {
         this.userService.loadUsersByDept(this.department).then((users: User[]) => {
             this.users = users;
             this.selectService.userSelect(users, this.dropdownList);
-             console.log(users);
+            console.log(users);
         });
     }
 

@@ -19,9 +19,9 @@ export class ManageMissionSchedulerComponent {
     ngOnInit() {
         this.roleCookie = +this.cookieService.get('Auth-RoleId');
         this.userName = this.cookieService.get('Auth-Username');
-        if (this.roleCookie === 2 || this.roleCookie === 3 || this.roleCookie === 5) {
+        if (this.roleCookie === 3) {
             // this.loadingService.start();
-          this.reload();
+            this.reload();
 
         } else if (isNaN(this.roleCookie)) {
             alert('You don\'t have permission to view this page!');
@@ -38,10 +38,10 @@ export class ManageMissionSchedulerComponent {
             alert(err);
         });
 
-}
-detail(mission: Mission) {
-    this.router.navigate(['/main/mission-detail', mission.missionId]);
-}
+    }
+    detail(mission: Mission) {
+        this.router.navigate(['/main/mission-detail', mission.missionId]);
+    }
 }
 
 

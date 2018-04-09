@@ -29,12 +29,16 @@ export class MeetingDetailComponent {
     }
 
     back() {
-        this.router.navigate(['/main/manage-meeting']);
+        if (this.roleCookie === 2) {
+            this.router.navigate(['/main/manage-meeting']);
+        } else {
+            this.router.navigate(['/main/manageMeeting-Scheduler']);
+        }
     }
 
     ngOnInit() {
         this.roleCookie = +this.cookieService.get("Auth-RoleId");
-        if (this.roleCookie == 2 || this.roleCookie == 3 || this.roleCookie == 5) {
+        if (this.roleCookie == 2 || this.roleCookie == 3) {
             this.form = new FormGroup({
                 meetingId: new FormControl(''),
                 roomId: new FormControl(''),
@@ -59,10 +63,10 @@ export class MeetingDetailComponent {
             // this.loadingService.start();
             this.roomService.getList().then((res: Room[]) => {
                 this.rooms = res;
-                if (this.id == 0) { 
-                this.form.patchValue({
-                    roomId: this.rooms[0].roomId
-                });
+                if (this.id == 0) {
+                    this.form.patchValue({
+                        roomId: this.rooms[0].roomId
+                    });
                 }
             }).catch(err => {
                 alert(err);

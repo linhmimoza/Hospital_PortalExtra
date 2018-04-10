@@ -157,7 +157,11 @@ export class MeetingDetailComponent {
                     this.responseText = res;
                     if (this.responseText === 'Success') {
                         this.notificationService.success(this.responseText).then(() => {
-                            this.router.navigate(['/main/manage-meeting']);
+                            if (this.roleCookie === 2) {
+                                this.router.navigate(['/main/manage-meeting']);
+                            } else {
+                                this.router.navigate(['/main/manageMeeting-Scheduler']);
+                            }
                         });
                     } else {
                         this.notificationService.fail(this.responseText);
@@ -170,7 +174,11 @@ export class MeetingDetailComponent {
                     this.responseText = res;
                     if (this.responseText === "Success") {
                         this.notificationService.success(this.responseText).then(() => {
-                            this.router.navigate(['/main/manage-meeting']);
+                            if (this.roleCookie === 2) {
+                                this.router.navigate(['/main/manage-meeting']);
+                            } else {
+                                this.router.navigate(['/main/manageMeeting-Scheduler']);
+                            }
                         });
                     } else {
                         this.notificationService.fail(this.responseText);

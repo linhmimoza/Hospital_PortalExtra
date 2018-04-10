@@ -111,7 +111,7 @@ export class DepartmentDetailComponent {
             if (this.id > 0) {
                 this.departmentService.updateDepartment(department).then((res: string) => {
                     this.responseText = res;
-                    if (this.responseText === "Success") {
+                    if (this.responseText === 'Success') {
                         this.notificationService.success(this.responseText).then((res) => {
                             this.router.navigate(['/main/department-list']);
                         });
@@ -134,7 +134,7 @@ export class DepartmentDetailComponent {
                         this.notificationService.fail(this.responseText);
                     }
                 }).catch(err => {
-                    debugger
+             
                     alert(err);
                 });
             }

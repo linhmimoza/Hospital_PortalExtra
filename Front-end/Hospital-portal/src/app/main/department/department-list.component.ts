@@ -74,7 +74,7 @@ export class DepartmentListComponent {
         }
         this.departmentService.updateDepartment(department).then(() => {
             this.notificationService.success("Success");
-            this.departmentService.getList().then((res: Department[]) => {
+            this.departmentService.getAll().then((res: Department[]) => {
                 this.departments = res;
             }).catch(err => {
                 alert(err);

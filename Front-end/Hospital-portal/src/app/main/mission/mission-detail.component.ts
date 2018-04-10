@@ -150,7 +150,11 @@ export class MissionDetailComponent {
                     this.responseText = res;
                     if (this.responseText === "Success") {
                         this.notificationService.success(this.responseText).then(() => {
-                            this.router.navigate(['/main/manage-mission']);
+                            if (this.roleCookie === 2) {
+                                this.router.navigate(['/main/manage-mission']);
+                            } else {
+                                this.router.navigate(['/main/manageMission-Scheduler']);
+                            }
                         });
                     } else {
                         this.notificationService.fail(this.responseText);
@@ -164,7 +168,11 @@ export class MissionDetailComponent {
                     this.responseText = res;
                     if (this.responseText === "Success") {
                         this.notificationService.success(this.responseText).then(() => {
-                            this.router.navigate(['/main/manage-mission']);
+                            if (this.roleCookie === 2) {
+                                this.router.navigate(['/main/manage-mission']);
+                            } else {
+                                this.router.navigate(['/main/manageMission-Scheduler']);
+                            }
                         });
                     } else {
                         this.notificationService.fail(this.responseText);

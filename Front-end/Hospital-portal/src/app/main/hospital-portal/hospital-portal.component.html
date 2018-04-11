@@ -42,13 +42,15 @@
             <div class="pricing-table" *ngFor="let notification of notifications | filter:term | paginate: { itemsPerPage: 2, currentPage: p }">
                 <div class="col-lg-6 col-sm-12">
                     <div class="plan">
-                        <h3>{{notification.notificationName}}
+                        <h3><b>Upload date: </b> {{notification.updateDate | date:'dd/MM/yyyy'}}
                         </h3>
-                        <a class="btn btn-lg btn-primary" href="#">View content</a>
                         <ul>
                             <li>
-                                <b>Update date: </b> {{notification.updateDate | date:'dd/MM/yyyy'}}</li>
+                               <h4>{{notification.notificationName}} </h4> 
+                            </li>
                         </ul>
+                        <a class="btn btn-lg btn-primary" href="#">View content</a>
+                        
                     </div>
                 </div>
             </div>

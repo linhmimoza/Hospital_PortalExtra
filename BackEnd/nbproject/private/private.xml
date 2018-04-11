@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/dao/NotificationDAO.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/dao/MissionDAO.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/Models/Notification.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/Resful/NotificationResource.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/dao/MeetingDAO.java</file>
+        </group>
     </open-files>
 </project-private>

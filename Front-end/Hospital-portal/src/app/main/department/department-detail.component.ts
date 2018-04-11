@@ -51,7 +51,7 @@ export class DepartmentDetailComponent {
                 this.id = +params['id']; // (+) converts string 'id' to a number        
                 this.departmentService.getList().then((departments: Department[]) => {
                     this.departments = departments;
-                    if (this.id == 0) this.department.departmentId = departments[0].departmentId;
+                    if (this.id === 0) { this.department.departmentId = departments[0].departmentId; }
                 });
                 if (this.id > 0) {
                     this.title = "You are updating department";

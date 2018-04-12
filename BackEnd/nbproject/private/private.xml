@@ -3,9 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/CAPSTON/Angular%20front%20end/BackEnd/src/java/dao/DepartmentDAO.java</file>
             <file>file:/D:/CAPSTON/Angular%20front%20end/BackEnd/src/java/DBUtils/DBUtils.java</file>
             <file>file:/D:/CAPSTON/Angular%20front%20end/BackEnd/src/java/Resful/DepartmentResource.java</file>
+=======
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/Models/Mission.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/dao/NotificationDAO.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/dao/MissionDAO.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/Models/Notification.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/Models/MissionWorker.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/Resful/NotificationResource.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/Models/Department.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/dao/MeetingDAO.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Hospital_PortalExtra/BackEnd/src/java/Models/Meeting.java</file>
+>>>>>>> 428dfec36b8163b9e6630cca76dfc6f034455e7b
         </group>
     </open-files>
 </project-private>

@@ -22,7 +22,7 @@ export class HospitalPortalComponent {
         this.roleCookie = +this.cookieService.get("Auth-RoleId");
         if (this.roleCookie == 1 || this.roleCookie == 2 || this.roleCookie == 3 || this.roleCookie == 4) {
             this.loadingService.start();
-            this.notificationComponentService.getList().then((res: Notification[]) => {
+            this.notificationComponentService.getActivateNotification().then((res: Notification[]) => {
                 this.notifications = res;
             }).catch(err => {
                 alert(err);

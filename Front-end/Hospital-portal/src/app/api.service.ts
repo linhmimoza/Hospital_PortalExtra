@@ -5,7 +5,7 @@ import { CookieService } from 'ngx-cookie-service';
 declare var $: any;
 @Injectable()
 export class ApiService {
-    host: string = 'http://localhost:8084/BackEnd/webresources/generic/';
+    host: string = 'http://localhost:8080/BackEnd/webresources/generic/';
     token: string = "none";
     constructor(private router: Router, private http: Http, private cookieService: CookieService) {
         $.browser.device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));

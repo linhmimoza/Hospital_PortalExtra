@@ -15,8 +15,8 @@ export class ManageMeetingComponent {
     popoverMessage: string = 'Are you really <b>sure</b> you want to do this?';
     confirmText: string = 'Yes <i class="glyphicon glyphicon-ok"></i>';
     cancelText: string = 'No <i class="glyphicon glyphicon-remove"></i>';
-    confirmDenyText: string = 'Deny <i class="glyphicon glyphicon-ok"></i>';
-    confirmAcceptText: string = 'Accept <i class="glyphicon glyphicon-ok"></i>';
+    confirmDenyText: string = 'Deny';
+    confirmAcceptText: string = 'Accept';
     confirmClicked: boolean = false;
     cancelClicked: boolean = false;
 

@@ -14,6 +14,7 @@ import { AccountService } from '../account/account.service';
 import { Department } from '../department/shared/department.model';
 import { DepartmentService } from '../department/service/department.service';
 import { CookieService } from 'ngx-cookie-service';
+import { NotificationService } from '../extra/notification.service';
 declare var $: any;
 @Component({
     selector: 'createShiftScheduler',
@@ -41,7 +42,8 @@ export class CreateShiftSchedulerComponent {
         private shiftSchedulerService: ShiftSchedulerService, private userService: UserService,
         private selectService: SelectService, private accountService: AccountService,
         private departmentService: DepartmentService,
-        private cookieService: CookieService) { }
+        private cookieService: CookieService,
+        private notificationService: NotificationService) { }
 
     ngOnInit() {
         this.roleCookie = +this.cookieService.get("Auth-RoleId");
@@ -131,10 +133,8 @@ export class CreateShiftSchedulerComponent {
         if (this.valid) {
             this.shiftSchedulerService.createMission(this.shiftScheduler).then(() => {
                 console.log(this.shiftScheduler);
-                alert('Save success');
-                // this.router.navigate(['/main/manage-mission']);
+                this.notificationService.success("Success");
             }).catch(err => {
-                // debugger;
                 alert(err);
             });
         }

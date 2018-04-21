@@ -4,6 +4,8 @@ import { NotificationComponentService } from "../notification/service/notificati
 import { NotificationService } from "../extra/notification.service";
 import { LoadingService } from "../extra/loading.service";
 import { CookieService } from "ngx-cookie-service";
+import { Notification } from "../notification/shared/notification.model";
+declare var $: any;
 
 @Component({
     selector: 'hospital-portal',
@@ -13,6 +15,7 @@ import { CookieService } from "ngx-cookie-service";
 export class HospitalPortalComponent {
     roleCookie: number;
     notifications: Notification[] = [];
+    selectedNotification: Notification = new Notification;
     constructor(private router: Router, private notificationComponentService: NotificationComponentService,
         private notificationService: NotificationService,
         private loadingService: LoadingService, private cookieService: CookieService) {
@@ -36,5 +39,12 @@ export class HospitalPortalComponent {
             this.router.navigate(['/main/hospital-portal']);
         }
 
+    }
+
+    view(notification) {
+        // this.loadScrip()  
+        this.selectedNotification = notification;
+        $('#modalLG').modal('show');
+        // this.loadScrip();
     }
 }

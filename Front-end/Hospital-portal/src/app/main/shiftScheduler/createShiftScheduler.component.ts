@@ -134,7 +134,9 @@ export class CreateShiftSchedulerComponent {
         if (this.valid) {
             this.shiftSchedulerService.createMission(this.shiftScheduler).then(() => {
                 console.log(this.shiftScheduler);
-                this.notificationService.success("Success");
+                this.notificationService.success("Success").then(() => {
+                    this.router.navigate(['/main/manage-shiftSchedule']);
+                });
             }).catch(err => {
                 alert(err);
             });

@@ -51,7 +51,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let mission of waitingMissions | filter:term | paginate: { itemsPerPage: 2, currentPage: p }" class="gradeX">
+                <tr *ngFor="let mission of waitingMissions | filter:term | paginate: { itemsPerPage: 10, currentPage: p }" class="gradeX">
                   <td>{{mission.startDate}}</td>
                   <td>{{mission.endDate}}</td>
                   <td>{{mission.place}}</td>
@@ -133,7 +133,7 @@
                   <td>{{mission.place}}</td>
                   <td>
                     <div class="bootstrap-tagsinput">
-                      <span *ngFor="let worker of mission.missionWorkerList | paginate: { itemsPerPage: 2, currentPage: p }" class="tag label label-info">
+                      <span *ngFor="let worker of mission.missionWorkerList | paginate: { itemsPerPage: 10, currentPage: p }" class="tag label label-info">
                         {{worker.userName}}
                         <span data-role="remove">
                         </span>

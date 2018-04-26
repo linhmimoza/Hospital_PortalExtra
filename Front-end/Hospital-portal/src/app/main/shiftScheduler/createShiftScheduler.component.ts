@@ -70,6 +70,7 @@ export class CreateShiftSchedulerComponent {
     loadUser() {
         this.userService.loadUsersByDept(this.department).then((users: User[]) => {
             this.users = users;
+            this.dropdownList = [];
             this.selectService.userSelect(users, this.dropdownList);
             console.log(users);
         });

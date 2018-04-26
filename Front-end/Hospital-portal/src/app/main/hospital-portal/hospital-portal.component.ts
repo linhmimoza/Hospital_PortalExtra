@@ -23,7 +23,7 @@ export class HospitalPortalComponent {
     }
     ngOnInit() {
         this.roleCookie = +this.cookieService.get("Auth-RoleId");
-        if (this.roleCookie == 1 || this.roleCookie == 2 || this.roleCookie == 3 || this.roleCookie == 4) {
+        if ((this.roleCookie >= 1 ) && (this.roleCookie <= 6)) {
             this.loadingService.start();
             this.notificationComponentService.getActivateNotification().then((res: Notification[]) => {
                 this.notifications = res;
@@ -42,7 +42,7 @@ export class HospitalPortalComponent {
     }
 
     view(notification) {
-        // this.loadScrip()  
+        // this.loadScrip()
         this.selectedNotification = notification;
         $('#modalLG').modal('show');
         // this.loadScrip();

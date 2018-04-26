@@ -22,6 +22,8 @@ export class ManageMissionComponent {
     waitingMissions: Mission[] = [];
     checkedMissons: Mission[] = [];
     roleCookie: number;
+    p: number = 1;
+    
     constructor(private router: Router,
         private missionService: MissionService, private cookieService: CookieService,
         private notificationService: NotificationService

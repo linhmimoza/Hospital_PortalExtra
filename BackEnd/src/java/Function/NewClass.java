@@ -21,7 +21,7 @@ public class NewClass {
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);          
         MessageCreator messageCreator = Message.creator( 
             "AC216ef9c173a73f16d7f85b0bddb2eca9", 
-            new PhoneNumber("+841212322412"), new PhoneNumber("+12676680539"),"dau roi day lam bai nao"
+            new PhoneNumber("+841212322412"), new PhoneNumber("+12676680539"),"goi lai cho l y"
         ); 
     
          

@@ -84,7 +84,6 @@ getPassManagerByDepartmentId(depId, week) {
     });
 }
 setListManager(list: ShiftSchedulerManager[]){
-  
     list.forEach(function(manage){
         let today = manage.week;
         if (today != null) {
@@ -99,7 +98,7 @@ setListManager(list: ShiftSchedulerManager[]){
           + (d.getTimezoneOffset() - offset) * 60 * 1000);
       d.setDate(d.getDate() - 3);
       let result = d.toLocaleDateString() + '-';
-      d.setDate(d.getDate() + 7);
+      d.setDate(d.getDate() + 6);
       result = result + d.toLocaleDateString();
       manage.range = result;
         }
@@ -195,7 +194,7 @@ setListManager(list: ShiftSchedulerManager[]){
     getThisWeek() {
         let today = new Date();
         let onejan = new Date(today.getFullYear(), 0, 1);
-        let week=Math.ceil((((today.getTime() - onejan.getTime()) / 86400000) + onejan.getDay()+ 1)/ 7 - 1);
+        let week=Math.ceil((((today.getTime() - onejan.getTime()) / 86400000) + onejan.getDay()+ 1)/ 7 );
         let thisWeek =today.getFullYear() + '-W' + week;
        return thisWeek;
     }
@@ -212,7 +211,7 @@ setListManager(list: ShiftSchedulerManager[]){
           + (d.getTimezoneOffset() - offset) * 60 * 1000);
       d.setDate(d.getDate() - 3);
       let result = d.toLocaleDateString() + '-';
-      d.setDate(d.getDate() + 7);
+      d.setDate(d.getDate() + 6);
       result = result + d.toLocaleDateString();
       return result;
     }

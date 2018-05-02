@@ -66,7 +66,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let meeting of waitingMeetings | filter:term1 | paginate: { itemsPerPage: 10, currentPage: p }" class="gradeX">
+                <tr *ngFor="let meeting of waitingMeetings | filter:term1 | paginate: { itemsPerPage: 5, currentPage: p ,id: 'd'}">
                   <td>{{meeting.meetingName}}</td>
                   <td>{{meeting.roomName}}</td>
                   <td>{{meeting.date}}</td>
@@ -93,7 +93,7 @@
             </table>
             <div class="row">
               <div class="col-md-4 col-md-offset-8" style="padding-top: 20px;">
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                <pagination-controls (pageChange)="p = $event " id="d"></pagination-controls>
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let meeting of checkedMeetings | filter:term | paginate: { itemsPerPage: 10, currentPage: p }" class="gradeX">
+                <tr *ngFor="let meeting of checkedMeetings | filter:term | paginate: { itemsPerPage: 5, currentPage: f }" class="gradeX">
                   <td>{{meeting.meetingName}}</td>
                   <td>{{meeting.roomName}}</td>
                   <td>{{meeting.date}}</td>
@@ -173,7 +173,7 @@
             </table>
             <div class="row">
               <div class="col-md-4 col-md-offset-8" style="padding-top: 20px;">
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                <pagination-controls (pageChange)="f = $event"></pagination-controls>
               </div>
             </div>
           </div>

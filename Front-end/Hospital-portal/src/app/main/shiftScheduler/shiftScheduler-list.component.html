@@ -11,7 +11,7 @@
       <div class="col-sm-6">
         <label class="col-sm-2 control-label">Department:
         </label>
-        <div class="col-sm-10">
+        <div class="col-sm-9">
           <select class="col-sm-10 form-control" [(ngModel)]="department" (change)="search(toDate,department)">
             <option *ngFor="let dept of departments" [ngValue]="dept.departmentId">{{dept.departmentName}}</option>
           </select>

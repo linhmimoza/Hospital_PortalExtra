@@ -57,7 +57,12 @@
                 <p style="color: white">
                   <strong>{{shift.startTime}}-{{shift.endTime}}</strong>
                 </p>
-                <button *ngFor="let worker of shift.shiftWorkerList" type="button" class="btn btn-default" style="margin: 2px">
+                <button *ngFor="let worker of shift.shiftWorkerList" type="button" class="btn btn-default" style="margin: 2px; 
+                font-weight: 500;
+                padding: 5px 8px;
+                border-radius: 10px;
+                cursor: pointer;
+                display: block;">
                   {{worker.userName}}</button>
               </div>
             </td>

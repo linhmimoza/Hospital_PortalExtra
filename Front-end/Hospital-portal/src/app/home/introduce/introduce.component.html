@@ -1,0 +1,10 @@
+<header class="panel-heading">
+  <h2 style="color: blue">{{intro.title}}</h2>
+</header>
+<div class="container" style="background: white; width: 100%">
+
+  <h5 style="color: black">Upload day: {{intro.uploadDay | date: 'dd/MM/yyyy'}}</h5>
+  <h5 style="color: black">Author: {{intro.uploadByUser}}</h5>
+  <h5 style="color: black">Content: </h5>
+  {{intro.content}}
+</div>

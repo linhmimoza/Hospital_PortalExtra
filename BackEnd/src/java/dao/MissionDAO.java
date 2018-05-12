@@ -319,5 +319,48 @@ public List<Mission> getAllMissionByUser(int userId) {
         }
         return listMission;
     }
+  public List<Mission> getUserMissionInDateRange(Mission m) {
+        List<Mission>  listMission = new ArrayList<>();
+        try {
+          con = DBUtils.DBUtils.makeConnection();
+            if (con != null) {
+                for (MissionWorker w:m.getMissionWorkerList()){
+         String   sql = "Select m.MissionId, StartDate, EndDate, Place, Content, Note, Status, Createby, CreateDate, \n" +
+"Updateby, UpdateDate from Mission m, MissionWorker w where\n" +
+"  m.MissionId=w.MissionId and w.UserId=" +w.getUserId()+
+"and m.Status=2 and \n" +
+"((m.StartDate<'"+m.getStartDate()+"' and m.EndDate>'"+m.getStartDate()+"') or\n" +
+" (m.StartDate<'"+m.getEndDate()+"' and m.EndDate>'"+m.getEndDate()+"') or \n" +
+" ('"+m.getStartDate()+"'<=m.StartDate and '"+m.getEndDate()+"'>=m.EndDate))";
+   stm = con.prepareStatement(sql);
+          
+         rs = stm.executeQuery();
+                while (rs.next()) {
+                  Integer id = rs.getInt("MissionId");
+                    String startDate = rs.getString("StartDate");
+                    String endDate = rs.getString("EndDate");
+                    String place = rs.getString("Place");
+                    String content = rs.getString("Content");
+                    String note = rs.getString("Note");
+                    Integer status = rs.getInt("Status");
+                    Integer createby = rs.getInt("Createby");
+                    String createDate = rs.getString("CreateDate");
+                    Integer updateby = rs.getInt("Updateby");
+                    String updateDate = rs.getString("UpdateDate");
+                    MissionWorkerDAO dao = new MissionWorkerDAO();
+                    List<MissionWorker> listWorker = new ArrayList<>();
+                    listWorker.add(w);
+                    Mission mission = new Mission(id, startDate, endDate, place, content, note, status, createDate, updateDate, listWorker, createby, updateby);
+                    listMission.add(mission); 
+                } 
+                }}
+            
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(MissionDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            closeConnection();
+        }
+        return listMission;
+    }
  
 }

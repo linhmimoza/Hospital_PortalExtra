@@ -109,4 +109,11 @@ public class MissionResource {
          App app=new App();   
     app.activateMission(mission);
    }
+   @Path("/testUser")
+   @POST
+   @Produces()
+   public  List<Mission> testUser(Mission mission){
+     MissionDAO dao=new MissionDAO();   
+    return dao.getUserMissionInDateRange(mission);
+   }
 }

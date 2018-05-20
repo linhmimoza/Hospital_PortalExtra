@@ -122,6 +122,19 @@
                                     <span>Manage room</span>
                                 </a>
                             </li>
+                            <li class="nav-active">
+                                <a [routerLink]="['/main/service']">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span>Manage Service</span>
+                                </a>
+                            </li>
+                            <li class="nav-active">
+                                <a [routerLink]="['/main/category']">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span>Manage Category</span>
+                                </a>
+                            </li>
+
                         </ul>
 
 
@@ -193,6 +206,12 @@
                                         </a>
                                     </li>
                                 </ul>
+                            </li>
+                            <li class="nav-active">
+                                <a [routerLink]="['/main/news']">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span>Manage Article</span>
+                                </a>
                             </li>
                             <li class="nav-active">
                                 <a [routerLink]="['/main/notification-list']">
@@ -289,6 +308,146 @@
 
 
                         <ul class="nav nav-main" *ngIf="roleId == 4">
+                            <li class="nav-active">
+                                <a [routerLink]="['/main/hospital-portal']">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span>Hospital portal</span>
+                                </a>
+                            </li>
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span>Schedule</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a [routerLink]="['/main/mission-list']">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                            <span>Mission schedule</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/main/meeting-list']">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                            <span>Meeting schedule</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/main/shiftScheduler-list']">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                            <span>Shift schedule</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-active">
+                                <a [routerLink]="['/main/news']">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span>Manage Article</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="nav nav-main" *ngIf="roleId == 5">
+                            <!-- <li class="nav-active">
+                                <a [routerLink]="['/main/dashboard']">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span>Home page</span>
+                                </a>
+                            </li> -->
+                            <li class="nav-active">
+                                <a [routerLink]="['/main/hospital-portal']">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span>Hospital portal</span>
+                                </a>
+                            </li>
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span>Schedule</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a [routerLink]="['/main/mission-list']">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                            <span>Mission schedule</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/main/meeting-list']">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                            <span>Meeting schedule</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/main/shiftScheduler-list']">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                            <span>Shift schedule</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span>Manage schedule</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a [routerLink]="['/main/manageMission-Scheduler']">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                            <span>Manage mission schedule</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/main/manageMeeting-Scheduler']">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                            <span>Manage meeting schedule</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/main/manage-shiftSchedule']">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                            <span>Manage shift schedule</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-active">
+                                <a [routerLink]="['/main/news']">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span>Manage Article</span>
+                                </a>
+                            </li>
+                            <!-- <li class="nav-active">
+                                <a [routerLink]="['/main/article']">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span>Manage article</span>
+                                </a>
+                            </li> -->
+                        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <ul class="nav nav-main" *ngIf="roleId == 6">
+                            <!-- <li class="nav-active">
+                                <a [routerLink]="['/main/dashboard']">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span>Home page</span>
+                                </a>
+                            </li> -->
                             <li class="nav-active">
                                 <a [routerLink]="['/main/hospital-portal']">
                                     <i class="fa fa-home" aria-hidden="true"></i>

@@ -1,0 +1,67 @@
+<section class="body">
+    <!-- start: header -->
+    <header class="header">
+        <div class="logo-container">
+            <a href="../" class="logo">
+                <img src="assets/porto/images/Hospital_Logo.png" height="35" alt="Porto Admin" />
+            </a>
+            <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+                <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+        </div>
+    </header>
+    <!-- end: header -->
+
+    <div class="inner-wrapper">
+        <!-- start: sidebar -->
+        <aside id="sidebar-left" class="sidebar-left">
+            <div class="nano">
+                <div class="nano-content">
+                </div>
+            </div>
+        </aside>
+        <!-- end: sidebar -->
+
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">WebSiteName</a>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 3</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+            <section class="panel">
+                <div class="panel-body">
+                    <div class="col-md-12" style="padding: 0">
+                        <img src="assets/img/bv.jpg" style="width: 100%; height: 350px;" />
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+
+                    </div>
+                </div>
+            </section>
+            <!-- start: page -->
+            <router-outlet></router-outlet>
+            <!-- end: page -->
+        </section>
+    </div>
+</section>

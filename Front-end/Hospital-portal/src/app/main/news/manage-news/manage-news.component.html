@@ -1,0 +1,75 @@
+<!-- This is User Detail Page
+<test-selector></test-selector> -->
+<div class="container" style="width: 100%">
+  <header class="page-header">
+    <h2>Article</h2>
+  </header>
+  <div class="row">
+    <div class="col-lg-12">
+      <div action="forms-validation.html" class="form-horizontal">
+        <section class="panel">
+          <header class="panel-heading">
+
+            <h2 class="panel-title">Manage Article</h2>
+            <!-- <p class="panel-subtitle">
+                        Basic validation will display a label with the error after the form control.
+                    </p> -->
+          </header>
+          <div class="panel-body">
+            <form [formGroup]="form" class="form-horizontal form-bordered">
+              <div class="form-group" *ngIf="catName">
+                <label class="col-md-3 control-label" for="inputDefault">Category name
+                </label>
+                <div class="col-md-6">
+                  <label class="col-md-9 control-label" style="text-align: left;" for="inputDefault" >{{catName}}
+                  </label>
+                </div>
+  
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label" for="inputDefault">Title
+                  <span class="required">*</span>
+                </label>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" id="inputDefault" name="title" formControlName="title" required>
+                  <div class="form-group" *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger" style="margin-top: 10px">
+                    <strong *ngIf="title.errors.required">Title is required.</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label" for="textareaDefault">Description</label>
+                <div class="col-md-7">
+                  <textarea class="form-control" name="describe" formControlName="describe" rows="3" id="textareaDefault"></textarea>
+                  <div class="form-group" *ngIf="describe.invalid && (describe.dirty || describe.touched)" class="alert alert-danger" style="margin-top: 10px">
+                    <strong *ngIf="describe.errors.required">Description is required.</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group" *ngIf="command === 'CREATE'">
+                <label class="col-md-3 control-label" for="textareaDefault">File Upload</label>
+                <div class="col-md-7">
+                  <input type="file" class="form-control" name="upload" accept=".docx, .pdf" (change)="filechange($event)" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <footer class="panel-footer">
+            <div class="row">
+              <div class="col-sm-9 col-sm-offset-3">
+                <button class="btn btn-primary" (click)="save()">
+                  <i class="fa fa-floppy-o"></i>
+                  Save</button>
+                <button class="btn btn-default" (click)="back()">
+                  <i class="fa fa-undo"></i>
+                  Back</button>
+              </div>
+            </div>
+          </footer>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

@@ -55,6 +55,14 @@ import { MeetingService } from './main/meetting/service/meeting.service';
 import { UploadShiftScheduleComponent } from './main/shiftScheduler/upload-shiftSchedule.component';
 import { ManageMeetingSchedulerComponent } from './main/meetting/manageMeeting-Scheduler.component';
 import { ManageMissionSchedulerComponent } from './main/mission/manageMission-Scheduler.component';
+import { HomepageComponent } from './home/homepage.component';
+import { ManagecategoryComponent } from './main/managecategory/managecategory.component';
+import { AddCategoryComponent } from './main/managecategory/add-category/add-category.component';
+import { CategoryService } from './main/managecategory/managecategory.service';
+import { AdminServiceComponent } from './main/service/service.component';
+import { ManageServiceComponent } from './main/service/manage-service/manage-service.component';
+import { AdminNewsComponent } from './main/news/news.component';
+import { ManageNewsComponent } from './main/news/manage-news/manage-news.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -85,10 +93,26 @@ const routes: Routes = [
       { path: 'check-shiftSchedule', component: CheckShiftScheduleComponent },
       { path: 'upload-shiftSchedule', component: UploadShiftScheduleComponent },
       { path: 'manageMeeting-Scheduler', component: ManageMeetingSchedulerComponent },
-      { path: 'manageMission-Scheduler', component: ManageMissionSchedulerComponent }
+      { path: 'manageMission-Scheduler', component: ManageMissionSchedulerComponent },
+      { path: 'category', component: ManagecategoryComponent },
+      { path: 'manage-category/:id', component: AddCategoryComponent },
+      { path: 'manage-category', component: AddCategoryComponent },
+      { path: 'manage-service/:id', component: ManageServiceComponent },
+      { path: 'manage-service/:id/:deptid', component: ManageServiceComponent },
+      { path: 'service', component: AdminServiceComponent },
+      { path: 'news', component: AdminNewsComponent },
+      { path: 'manage-news/:id', component: ManageNewsComponent },
+      { path: 'manage-news/:id/:catid', component: ManageNewsComponent }
     ]
   },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  {
+    path: 'home', component: HomepageComponent, pathMatch: 'full'
+    // children: [
+    //   { path: 'news/:id', component: NewsComponent },
+    //   { path: 'news-detail/:id', component: NewsDetailComponent }
+    // ]
+  },
   { path: '**', component: PageNotFoundComponent, pathMatch: 'full' }
 ];
 
@@ -124,7 +148,15 @@ const routes: Routes = [
     UploadShiftScheduleComponent,
     CheckShiftScheduleComponent,
     ManageMeetingSchedulerComponent,
-    ManageMissionSchedulerComponent
+    ManageMissionSchedulerComponent,
+    HomepageComponent,
+    ManagecategoryComponent,
+    AddCategoryComponent,
+    ManageServiceComponent,
+    AdminServiceComponent,
+    AdminNewsComponent,
+    ManageNewsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -144,7 +176,7 @@ const routes: Routes = [
   ],
   providers: [
     NotificationService, LoadingService, LoginService, AccountService, ApiService, UserService,
-    DepartmentService, RoleService, RoomService, MissionService,
+    DepartmentService, RoleService, RoomService, MissionService, CategoryService,
     ShiftSchedulerService, ManageService, MeetingService, CookieService, SelectService, NotificationComponentService
   ],
   bootstrap: [AppComponent]
